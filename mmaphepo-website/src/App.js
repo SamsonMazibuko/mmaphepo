@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { AppBar, Toolbar, Typography, Button, Container, Box, Stack, IconButton, Badge } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Container, Box, Stack, IconButton, Badge, Paper, TextField } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HomeIcon from '@mui/icons-material/Home';
 import StorefrontIcon from '@mui/icons-material/Storefront';
@@ -18,10 +18,189 @@ import Settings from "./pages/Settings";
 import { companyLogo } from "./data/products";
 import Footer from "./components/Footer";
 import MoreMenu from "./components/MoreMenu";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Popover from '@mui/material/Popover';
+import ChatIcon from '@mui/icons-material/Chat';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const CartContext = createContext();
 export const OrderContext = createContext();
 export const AuthContext = createContext();
+
+// shopMenu as before, but with images for some categories (optional, can be extended)
+const shopMenu = [
+  {
+    title: "Chain",
+    sub: [
+      "Roller Chain",
+      "Double Pitch Chain",
+      "Leaf Chain",
+      "Heavy Duty Drive Chain",
+      "Timber Chain",
+      "Food Industry Chain",
+      "Agricultural Chain",
+      "Conveyor Chain",
+      "Block Chain",
+      "Engineered Bush Chain",
+      "Drop Forged Chain",
+      "Palm Oil Chain",
+      "Sugar Chain"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/chain_left.jpg"
+  },
+  {
+    title: "Sprockets",
+    sub: [
+      "British Standard Taper Bore Sprockets",
+      "British Standard Pilot Bore Sprockets",
+      "British Standard Pilot Bore Plate Wheels",
+      "Taper Bore Double Simplex Sprockets",
+      "Pilot Bore Double Simplex Sprockets",
+      "Idler Sprockets",
+      "ANSI Pilot Bore Sprockets"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_left.jpg"
+  },
+  {
+    title: "Belts",
+    sub: [
+      "Classical V-Belts",
+      "Classical CRE V-Belts",
+      "Wedge Belts",
+      "CRE Wedge Belts",
+      "Narrow V Belts",
+      "Classical Timing Belts",
+      "Curved Tooth Timing Belts"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/belts_left.jpg"
+  },
+  {
+    title: "Pulleys",
+    sub: [
+      "V-Pulleys",
+      "Variable Speed Pulleys",
+      "PV Pulley - Section J",
+      "PV Pulley - Section K",
+      "PV Pulley - Section L",
+      "Timing Pulleys - Taper Bore",
+      "HTD Profile Pulleys - Taper Bore",
+      "Metric Timing Pulleys - Pilot Bore",
+      "Timing Pulleys - Pilot Bore",
+      "HTD Profile Pulleys - Pilot Bore",
+      "Metric Pitch Timing Bars",
+      "HTD Profile Timing Bars"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/pulleys_left.jpg"
+  },
+  {
+    title: "Shaft Fixings",
+    sub: [
+      "Taper Bushes - Metric",
+      "Taper Bushes - Imperial",
+      "Taper Bush Adaptors",
+      "Bolt-on-Hubs",
+      "Weld-on-Hubs",
+      "Shaftlock Sizes 01 - 22",
+      "Torque Limiters"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/shaft_fixings_left.jpg"
+  },
+  {
+    title: "Shaft Couplings",
+    sub: [
+      "FFX Tyre Couplings",
+      "HRC Couplings",
+      "NPX Couplings",
+      "RPX Couplings",
+      "CNM Couplings",
+      "JAW Couplings",
+      "Chain Couplings"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/shaft_couplings_left.jpg"
+  },
+  {
+    title: "Electric Motors",
+    sub: [
+      "Motor Mounts",
+      "Three Phase"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/electric_motors_left.jpg"
+  },
+  {
+    title: "Gearboxes",
+    sub: [
+      "Worm Gear Units",
+      "SMSRs"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/new_gear_boxes_left.jpg"
+  },
+  {
+    title: "Bearings",
+    sub: [
+      "Bearing Units",
+      "Plummer Blocks",
+      "Standard Bearings"
+    ],
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/bearings_left.jpg"
+  }
+];
+
+function ChatWidget() {
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([
+    { from: "bot", text: "Hi! How can we help you today?" }
+  ]);
+
+  const handleSend = () => {
+    if (input.trim()) {
+      setMessages([...messages, { from: "user", text: input }]);
+      setInput("");
+      // Simulate bot reply
+      setTimeout(() => {
+        setMessages(msgs => [...msgs, { from: "bot", text: "Thank you for your inquiry! We'll get back to you soon." }]);
+      }, 1000);
+    }
+  };
+
+  return (
+    <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 1300 }}>
+      {!open && (
+        <IconButton color="primary" sx={{ bgcolor: '#fff', boxShadow: 3 }} onClick={() => setOpen(true)}>
+          <ChatIcon />
+        </IconButton>
+      )}
+      {open && (
+        <Paper elevation={6} sx={{ width: 320, maxWidth: '90vw', p: 0, borderRadius: 3, boxShadow: 6 }}>
+          <Box sx={{ bgcolor: 'primary.main', color: '#fff', p: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTopLeftRadius: 12, borderTopRightRadius: 12 }}>
+            <Typography fontWeight={600}>Chat with us</Typography>
+            <IconButton size="small" sx={{ color: '#fff' }} onClick={() => setOpen(false)}><CloseIcon /></IconButton>
+          </Box>
+          <Box sx={{ p: 2, minHeight: 180, maxHeight: 260, overflowY: 'auto', bgcolor: '#f9f9f9' }}>
+            {messages.map((msg, idx) => (
+              <Box key={idx} sx={{ mb: 1, textAlign: msg.from === 'user' ? 'right' : 'left' }}>
+                <Typography variant="body2" sx={{ display: 'inline-block', px: 1.5, py: 0.5, borderRadius: 2, bgcolor: msg.from === 'user' ? 'primary.light' : '#e3e3e3', color: msg.from === 'user' ? 'primary.main' : '#222', maxWidth: '80%' }}>{msg.text}</Typography>
+              </Box>
+            ))}
+          </Box>
+          <Stack direction="row" spacing={1} sx={{ p: 1.5, borderTop: '1px solid #eee' }}>
+            <TextField
+              size="small"
+              placeholder="Type your message..."
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') handleSend(); }}
+              sx={{ flex: 1, bgcolor: '#fff' }}
+            />
+            <Button variant="contained" color="primary" onClick={handleSend} disabled={!input.trim()}>Send</Button>
+          </Stack>
+        </Paper>
+      )}
+    </Box>
+  );
+}
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -86,6 +265,16 @@ function App() {
     setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
   };
 
+  // Megamenu state (for Shop button only)
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <AuthContext.Provider value={{ user, login, logout, register }}>
       <OrderContext.Provider value={{ orders, addOrder, updateOrderStatus }}>
@@ -115,7 +304,14 @@ function App() {
                   </Box>
                   <Stack direction="row" spacing={2} alignItems="center">
                     <Button color="primary" component={Link} to="/" startIcon={<HomeIcon />}>Home</Button>
-                    <Button color="primary" component={Link} to="/shop" startIcon={<StorefrontIcon />}>Shop</Button>
+                    <Button
+                      color="primary"
+                      component={Link}
+                      to="/shop"
+                      startIcon={<StorefrontIcon />}
+                    >
+                      Shop
+                    </Button>
                     <IconButton color="primary" component={Link} to="/cart">
                       <Badge badgeContent={cartCount} color="secondary">
                         <ShoppingCartIcon />
@@ -142,6 +338,7 @@ function App() {
               </Routes>
             </Container>
             <Footer />
+            <ChatWidget />
           </Router>
         </CartContext.Provider>
       </OrderContext.Provider>

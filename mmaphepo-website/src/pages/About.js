@@ -22,7 +22,7 @@ const timeline = [
 ];
 
 const About = () => (
-  <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
+  <Container maxWidth="lg" className="section-bg" sx={{ mt: 4, mb: 8, py: 6, borderRadius: 3 }}>
     {/* Header with Logo and Intro */}
     <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 4 }}>
       <Avatar src={companyLogo} alt="Logo" sx={{ width: 80, height: 80, boxShadow: 2, bgcolor: '#fff' }} />
@@ -34,7 +34,7 @@ const About = () => (
     {/* Main Content */}
     <Grid container spacing={4}>
       <Grid item xs={12} md={6}>
-        <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
+        <Paper elevation={2} className="card-shadow section-alt" sx={{ p: 3, height: '100%' }}>
           <Typography variant="h5" fontWeight={700} gutterBottom>Who We Are</Typography>
           <Typography variant="body1" paragraph>
             Mmaphepo Holdings is dedicated to providing value-engineered solutions and minimizing downtime for our clients. We serve a wide range of industries including mining, construction, agriculture, and petrochemicals. Our commitment is to deliver excellence, quality, and reliability in every project and product.
@@ -45,7 +45,7 @@ const About = () => (
         </Paper>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Paper elevation={2} sx={{ p: 3, height: '100%' }}>
+        <Paper elevation={2} className="card-shadow section-alt" sx={{ p: 3, height: '100%' }}>
           <Typography variant="h5" fontWeight={700} gutterBottom>Our Mission</Typography>
           <Typography variant="body2" paragraph>
             To provide a service that will add sustainable, value-engineered solutions to the operation of our clients in commerce, industry, and the public sector. We strive to understand our clients’ needs and to deliver service excellence with uncompromising passion and quality.
@@ -62,13 +62,13 @@ const About = () => (
       </Grid>
     </Grid>
     {/* Timeline Section */}
-    <Box sx={{ mt: 6, mb: 4 }}>
+    <Box className="section-bg" sx={{ mt: 6, mb: 4, py: 6, borderRadius: 3 }}>
       <Typography variant="h4" fontWeight={700} align="center" gutterBottom>
         <TimelineIcon sx={{ mb: -0.5, mr: 1 }} /> Our Story
       </Typography>
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} justifyContent="center" alignItems="flex-start">
         {timeline.map((item, idx) => (
-          <Card key={idx} sx={{ minWidth: 200, flex: 1, mx: 1, bgcolor: '#f5f5f5' }}>
+          <Card key={idx} className="card-shadow section-alt" sx={{ minWidth: 200, flex: 1, mx: 1, bgcolor: '#fff' }}>
             <CardContent>
               <Typography variant="h6" color="primary" fontWeight={700}>{item.year}</Typography>
               <Typography variant="body2">{item.event}</Typography>
@@ -77,26 +77,9 @@ const About = () => (
         ))}
       </Stack>
     </Box>
-    {/* Meet the Team Section */}
-    <Box sx={{ mt: 6, mb: 4 }}>
-      <Typography variant="h4" fontWeight={700} align="center" gutterBottom>
-        <GroupIcon sx={{ mb: -0.5, mr: 1 }} /> Meet the Team
-      </Typography>
-      <Stack direction="row" spacing={4} justifyContent="center" alignItems="center">
-        {team.map((member, idx) => (
-          <Card key={idx} sx={{ minWidth: 200, textAlign: 'center', p: 2, bgcolor: '#f9f9f9' }}>
-            <CardContent>
-              <Avatar src={member.avatar} alt={member.name} sx={{ width: 72, height: 72, mx: 'auto', mb: 1 }} />
-              <Typography variant="h6" fontWeight={600}>{member.name}</Typography>
-              <Typography variant="body2" color="text.secondary">{member.role}</Typography>
-            </CardContent>
-          </Card>
-        ))}
-      </Stack>
-    </Box>
     {/* Contact Info */}
-    <Box sx={{ mt: 6 }}>
-      <Paper elevation={3} sx={{ p: 4, bgcolor: '#f0f4f8' }}>
+    <Box className="section-alt card-shadow" sx={{ mt: 6, py: 6, borderRadius: 3 }}>
+      <Paper elevation={3} sx={{ p: 4, bgcolor: 'transparent', boxShadow: 'none' }}>
         <Typography variant="h5" fontWeight={700} gutterBottom>Contact Us</Typography>
         <Stack spacing={1}>
           <Stack direction="row" spacing={1} alignItems="center">
@@ -109,7 +92,7 @@ const About = () => (
           </Stack>
           <Stack direction="row" spacing={1} alignItems="center">
             <EmailIcon color="primary" />
-            <Typography variant="body1">Phepoholdings@gmail.com</Typography>
+            <Typography variant="body1">info@mmaphepo.co.za</Typography>
           </Stack>
         </Stack>
       </Paper>

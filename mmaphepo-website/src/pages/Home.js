@@ -28,7 +28,7 @@ const testimonials = [
 ];
 
 const Home = () => (
-  <Box>
+  <Box className="section-bg" sx={{ pb: 8 }}>
     {/* Hero Section */}
     <Box sx={{
       minHeight: { xs: 350, md: 420 },
@@ -43,64 +43,64 @@ const Home = () => (
       boxShadow: 3
     }}>
       <Container maxWidth="md" sx={{ textAlign: 'center', py: 6 }}>
-        <Avatar src={companyLogo} alt="Logo" sx={{ width: 90, height: 90, mx: 'auto', mb: 2, boxShadow: 2, bgcolor: '#fff' }} />
-        <Typography variant="h2" fontWeight={700} sx={{ letterSpacing: 2, mb: 1, textShadow: '0 2px 8px #0008' }}>
+        <Avatar src={companyLogo} alt="Logo" sx={{ width: 64, height: 64, mx: 'auto', mb: 2, boxShadow: 2, bgcolor: '#fff' }} />
+        <Typography variant="h3" fontWeight={700} sx={{ letterSpacing: 1, mb: 1, textShadow: '0 2px 8px #0008', fontSize: { xs: '2rem', md: '2.5rem' } }}>
           Mmaphepo Holdings
         </Typography>
-        <Typography variant="h5" sx={{ mb: 3, textShadow: '0 1px 6px #0007' }}>
+        <Typography variant="h6" sx={{ mb: 2, textShadow: '0 1px 6px #0007', fontSize: { xs: '1.1rem', md: '1.3rem' } }}>
           Your Partner in Industrial, Mining, and Engineering Solutions
         </Typography>
-        <Button variant="contained" color="primary" size="large" href="/shop" sx={{ fontWeight: 600, px: 5, py: 1.5, fontSize: '1.2rem', borderRadius: 8 }}>
+        <Button variant="contained" color="primary" size="large" href="/shop" sx={{ fontWeight: 600, px: 4, py: 1, fontSize: '1rem', borderRadius: 8 }}>
           Shop Now
         </Button>
       </Container>
     </Box>
 
     {/* Why Choose Us */}
-    <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" align="center" fontWeight={700} gutterBottom>Why Choose Us</Typography>
+    <Box className="section-alt" sx={{ py: 5, borderRadius: 3, mb: 6 }}>
+      <Typography variant="h5" align="center" fontWeight={700} gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '1.6rem' } }}>Why Choose Us</Typography>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} md={4}>
           <Stack alignItems="center" spacing={1}>
-            <EmojiEventsIcon color="primary" sx={{ fontSize: 48 }} />
-            <Typography variant="h6" fontWeight={600}>Excellence & Quality</Typography>
-            <Typography align="center" color="text.secondary">We deliver only the best products and services, ensuring top quality for every client.</Typography>
+            <EmojiEventsIcon color="primary" sx={{ fontSize: 38 }} />
+            <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>Excellence & Quality</Typography>
+            <Typography align="center" color="text.secondary" sx={{ fontSize: '0.95rem' }}>We deliver only the best products and services, ensuring top quality for every client.</Typography>
           </Stack>
         </Grid>
         <Grid item xs={12} md={4}>
           <Stack alignItems="center" spacing={1}>
-            <LocalShippingIcon color="primary" sx={{ fontSize: 48 }} />
-            <Typography variant="h6" fontWeight={600}>Fast & Reliable Delivery</Typography>
-            <Typography align="center" color="text.secondary">Our logistics ensure your products arrive on time, every time, with minimal downtime.</Typography>
+            <LocalShippingIcon color="primary" sx={{ fontSize: 38 }} />
+            <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>Fast & Reliable Delivery</Typography>
+            <Typography align="center" color="text.secondary" sx={{ fontSize: '0.95rem' }}>Our logistics ensure your products arrive on time, every time, with minimal downtime.</Typography>
           </Stack>
         </Grid>
         <Grid item xs={12} md={4}>
           <Stack alignItems="center" spacing={1}>
-            <VerifiedUserIcon color="primary" sx={{ fontSize: 48 }} />
-            <Typography variant="h6" fontWeight={600}>Trusted Expertise</Typography>
-            <Typography align="center" color="text.secondary">Years of experience in mining, construction, and industrial supply make us your trusted partner.</Typography>
+            <VerifiedUserIcon color="primary" sx={{ fontSize: 38 }} />
+            <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>Trusted Expertise</Typography>
+            <Typography align="center" color="text.secondary" sx={{ fontSize: '0.95rem' }}>Years of experience in mining, construction, and industrial supply make us your trusted partner.</Typography>
           </Stack>
         </Grid>
       </Grid>
     </Box>
 
     {/* Featured Products */}
-    <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" align="center" fontWeight={700} gutterBottom>Featured Products</Typography>
+    <Box className="section-bg" sx={{ py: 5, borderRadius: 3, mb: 6 }}>
+      <Typography variant="h5" align="center" fontWeight={700} gutterBottom sx={{ fontSize: { xs: '1.3rem', md: '1.6rem' } }}>Featured Products</Typography>
       <Grid container spacing={4} justifyContent="center">
         {featured.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', boxShadow: 3 }}>
+            <Card className="card-shadow" sx={{ height: '100%', display: 'flex', flexDirection: 'column', boxShadow: 3 }}>
               <CardMedia
                 component="img"
-                height="180"
+                height="120"
                 image={product.image}
                 alt={product.name}
                 sx={{ objectFit: 'contain', bgcolor: '#f5f5f5' }}
               />
               <CardContent>
-                <Typography variant="h6" fontWeight={600}>{product.name}</Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>{product.description}</Typography>
+                <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>{product.name}</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1, fontSize: '0.95rem' }}>{product.description}</Typography>
                 <Button variant="outlined" color="primary" href={`/product/${product.id}`}>View Details</Button>
               </CardContent>
             </Card>
@@ -110,12 +110,12 @@ const Home = () => (
     </Box>
 
     {/* Testimonials */}
-    <Box sx={{ mb: 6 }}>
+    <Box className="section-alt" sx={{ py: 6, borderRadius: 3, mb: 6 }}>
       <Typography variant="h4" align="center" fontWeight={700} gutterBottom>What Our Clients Say</Typography>
       <Grid container spacing={4} justifyContent="center">
         {testimonials.map((t, idx) => (
           <Grid item xs={12} md={4} key={idx}>
-            <Paper elevation={3} sx={{ p: 3, textAlign: 'center', borderRadius: 4, bgcolor: '#f9f9f9' }}>
+            <Paper elevation={3} className="card-shadow" sx={{ p: 3, textAlign: 'center', borderRadius: 4, bgcolor: '#f9f9f9' }}>
               <Avatar src={t.avatar} alt={t.name} sx={{ width: 56, height: 56, mx: 'auto', mb: 1 }} />
               <FormatQuoteIcon color="primary" sx={{ fontSize: 32, mb: -2 }} />
               <Typography variant="body1" fontStyle="italic" sx={{ mb: 1 }}>
@@ -129,10 +129,10 @@ const Home = () => (
     </Box>
 
     {/* Company Mission & Vision */}
-    <Box sx={{ mb: 8 }}>
+    <Box className="section-bg" sx={{ mb: 8, py: 6, borderRadius: 3 }}>
       <Grid container spacing={4} justifyContent="center">
         <Grid item xs={12} md={6}>
-          <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
+          <Paper elevation={2} className="card-shadow" sx={{ p: 3, borderRadius: 3 }}>
             <Typography variant="h5" fontWeight={700} gutterBottom>Our Mission</Typography>
             <Typography>
               To provide a service that will add sustainable, value-engineered solutions to the operation of our clients in commerce, industry, and the public sector. We strive to understand our clients’ needs and to deliver service excellence with uncompromising passion and quality.
@@ -140,7 +140,7 @@ const Home = () => (
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
+          <Paper elevation={2} className="card-shadow" sx={{ p: 3, borderRadius: 3 }}>
             <Typography variant="h5" fontWeight={700} gutterBottom>Our Vision</Typography>
             <Typography>
               Our vision is to be the Mining and Infrastructure Specialists of choice in the markets we serve.

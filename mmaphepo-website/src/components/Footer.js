@@ -44,7 +44,7 @@ const Footer = () => (
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center">
               <EmailIcon fontSize="small" />
-              <Typography variant="body2">Phepoholdings@gmail.com</Typography>
+              <Typography variant="body2">info@mmaphepo.co.za</Typography>
             </Stack>
           </Stack>
         </Box>
@@ -52,8 +52,6 @@ const Footer = () => (
         <Box>
           <Typography variant="subtitle1" fontWeight={600} gutterBottom>Follow Us</Typography>
           <Stack direction="row" spacing={1}>
-            <IconButton color="primary" href="#" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: 'primary.light' } }}><FacebookIcon /></IconButton>
-            <IconButton color="primary" href="#" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: 'primary.light' } }}><TwitterIcon /></IconButton>
             <IconButton color="primary" href="#" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: 'primary.light' } }}><LinkedInIcon /></IconButton>
           </Stack>
         </Box>

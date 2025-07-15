@@ -1,13 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Typography, Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, IconButton, Button, TextField, Stack } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CartContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Snackbar, Alert } from "@mui/material";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQty, clearCart } = useContext(CartContext);
   const navigate = useNavigate();
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const total = cart.reduce((sum, item) => sum + (parseFloat(item.price) || 0) * (item.qty || 1), 0);
+
+  // Quote dialog state
+  const [quoteOpen, setQuoteOpen] = useState(false);
+  const [quoteForm, setQuoteForm] = useState({ name: "", email: "", message: "" });
+  const [quoteSent, setQuoteSent] = useState(false);
+
+  const handleQuoteOpen = () => setQuoteOpen(true);
+  const handleQuoteClose = () => setQuoteOpen(false);
+  const handleQuoteChange = e => setQuoteForm({ ...quoteForm, [e.target.name]: e.target.value });
+  const handleQuoteSubmit = e => {
+    e.preventDefault();
+    setQuoteOpen(false);
+    setQuoteSent(true);
+    setQuoteForm({ name: "", email: "", message: "" });
+  };
 
   if (cart.length === 0) {
     return (
@@ -70,9 +86,66 @@ const Cart = () => {
           <Stack direction="row" spacing={2}>
             <Button variant="outlined" color="error" onClick={clearCart}>Clear Cart</Button>
             <Button variant="contained" color="primary" onClick={() => navigate('/checkout')}>Proceed to Checkout</Button>
+            <Button variant="contained" color="secondary" onClick={handleQuoteOpen}>Get Quote</Button>
           </Stack>
         </Box>
       </Paper>
+      {/* Quote Dialog */}
+      <Dialog open={quoteOpen} onClose={handleQuoteClose}>
+        <DialogTitle>Request a Quote</DialogTitle>
+        <form onSubmit={handleQuoteSubmit}>
+          <DialogContent sx={{ minWidth: 320 }}>
+            <TextField
+              autoFocus
+              margin="dense"
+              label="Name"
+              name="name"
+              value={quoteForm.name}
+              onChange={handleQuoteChange}
+              fullWidth
+              required
+            />
+            <TextField
+              margin="dense"
+              label="Email"
+              name="email"
+              type="email"
+              value={quoteForm.email}
+              onChange={handleQuoteChange}
+              fullWidth
+              required
+            />
+            <TextField
+              margin="dense"
+              label="Message (optional)"
+              name="message"
+              value={quoteForm.message}
+              onChange={handleQuoteChange}
+              fullWidth
+              multiline
+              minRows={2}
+            />
+            <Box sx={{ mt: 2 }}>
+              <Typography variant="subtitle2">Products to Quote:</Typography>
+              <ul style={{ margin: 0, paddingLeft: 18 }}>
+                {cart.map(item => (
+                  <li key={item.id}>{item.name} (x{item.qty || 1})</li>
+                ))}
+              </ul>
+            </Box>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleQuoteClose}>Cancel</Button>
+            <Button type="submit" variant="contained" color="secondary">Submit Quote</Button>
+          </DialogActions>
+        </form>
+      </Dialog>
+      {/* Confirmation Snackbar */}
+      <Snackbar open={quoteSent} autoHideDuration={4000} onClose={() => setQuoteSent(false)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Alert onClose={() => setQuoteSent(false)} severity="success" sx={{ width: '100%' }}>
+          Your quote request has been submitted! We will contact you soon.
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };

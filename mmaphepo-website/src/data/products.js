@@ -1,28 +1,343 @@
-// Product data for Mmaphepo Holdings
-// Images are referenced from the public/images directory
-
+// Product data extracted from the reference homepage, grouped by category and subcategory
 const products = [
-  { id: 1, name: "Cable ties", category: "Fastening", description: "Fastening solution for bundling cables and wires.", image: "/images/slide_24_img_4.png", price: 20 },
-  { id: 2, name: "Riveters", category: "Fastening", description: "Hand tool for joining metal sheets with rivets.", image: "/images/slide_24_img_5.png", price: 150 },
-  { id: 3, name: "Staple guns", category: "Fastening", description: "Tool for driving heavy metal staples into materials.", image: "/images/slide_24_img_6.png", price: 120 },
-  { id: 4, name: "Chain Hoists", category: "Lifting & Rigging", description: "Mechanical device for lifting heavy loads using a chain.", image: "/images/slide_23_img_4.png", price: 800 },
-  { id: 5, name: "Ball Bearing", category: "Bearings", description: "Precision bearing for reducing friction in rotating parts.", image: "/images/slide_22_img_5.png", price: 50 },
-  { id: 6, name: "Diaphragm Valve", category: "Valves and Pumps", description: "Valve for controlling the flow of liquids, especially in slurry applications.", image: "/images/slide_21_img_4.png", price: 350 },
-  { id: 7, name: "V- and wedge belts", category: "Power Transmission", description: "Belts for power transmission in industrial machinery.", image: "/images/slide_20_img_7.png", price: 60 },
-  { id: 8, name: "Borehole pump (complete)", category: "Power Generation", description: "Complete borehole pump system for water extraction.", image: "/images/slide_19_img_4.png", price: 1200 },
-  { id: 9, name: "Multimeter", category: "Electronic", description: "Electronic measuring instrument.", image: "/images/slide_24_img_9.png", price: 200 },
-  { id: 10, name: "Grinder", category: "Power Tool", description: "Tool for grinding, cutting, or polishing.", image: "/images/slide_24_img_11.png", price: 300 },
-  { id: 11, name: "Slurry pump", category: "Valves and Pumps", description: "Pump for moving slurry.", image: "/images/slide_21_img_6.png", price: 900 },
-  { id: 12, name: "Safety Slings", category: "Popular Product", description: "Slings for lifting and safety.", image: "/images/slide_23_img_7.png", price: 100 },
-  { id: 13, name: "Mining Steel Wire Rope", category: "Popular Product", description: "Steel wire rope for mining applications.", image: "/images/slide_23_img_8.png", price: 400 },
-  { id: 14, name: "Hydraulic jack", category: "Popular Product", description: "Jack for lifting heavy loads using hydraulic power.", image: "/images/slide_23_img_12.png", price: 500 },
-  { id: 15, name: "PUMP Centrifugal Eltanorm", category: "Popular Product", description: "Centrifugal pump for various applications.", image: "/images/slide_23_img_13.png", price: 1100 },
-  { id: 16, name: "Electric Pressure Test Pump", category: "Popular Product", description: "Pump for pressure testing.", image: "/images/slide_23_img_14.png", price: 950 },
-  { id: 17, name: "Flanges", category: "Popular Product", description: "Pipe flanges for industrial use.", image: "/images/slide_24_img_17.png", price: 80 },
-  { id: 18, name: "Garage & Workshop Equipment", category: "Tools and Equipment", description: "Equipment for garages and workshops.", image: "/images/slide_24_img_14.png", price: 700 },
-  { id: 19, name: "Panelbeating tools & Spray Guns", category: "Tools and Equipment", description: "Tools for panelbeating and spray painting.", image: "/images/slide_24_img_15.png", price: 350 },
-  { id: 20, name: "Bearing pullers", category: "Tools and Equipment", description: "Tool for removing bearings.", image: "/images/slide_24_img_16.png", price: 180 },
+  // Chain
+  {
+    id: 1,
+    name: "X Series BS Roller Chain 64B-3 Rivet Link",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3xrl-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 2,
+    name: "X Series BS Roller Chain 64B-3 Offset Link",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3l-chain-roller_chain-british_standard_roller_chain-1_3.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 3,
+    name: "X Series BS Roller Chain 64B-3 Cotter Pin Connecting Link",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3xs-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 4,
+    name: "X Series BS Roller Chain 64B-3",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3x-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 5,
+    name: "X Series BS Roller Chain 56B-3 Rivet Link",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-56b-3xrl-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 6,
+    name: "X Series BS Roller Chain 56B-3 Offset Link",
+    category: "Chain",
+    subcategory: "Roller Chain",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-56b-3l-chain-roller_chain-british_standard_roller_chain-1_3.jpg",
+    price: "Price on Request"
+  },
+  // Pulleys
+  {
+    id: 7,
+    name: "Taper Bored Pulley SPC 1250-12 (6050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x12-pulleys-v-pulleys-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 8,
+    name: "Taper Bored Pulley SPC 1250-10 (5050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x10-pulleys-v-pulleys-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 9,
+    name: "Taper Bored Pulley SPC 1250-8 (5050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x8-pulleys-v-pulleys-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 10,
+    name: "Taper Bored Pulley SPC 1250-6 (5050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x6-pulleys-v-pulleys-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 11,
+    name: "Taper Bored Pulley SPC 1250-5 (5050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x5-pulleys-v-pulleys-1_2.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 12,
+    name: "Taper Bored Pulley SPC 1250-4 (5050)",
+    category: "Pulleys",
+    subcategory: "V-Pulleys",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x4-pulleys-v-pulleys-1_2.jpg",
+    price: "Price on Request"
+  },
+  // Shaft Couplings
+  {
+    id: 13,
+    name: "FFX Coupling FRAS Tyre 250",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250fras-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 14,
+    name: "FFX Coupling Natural Tyre 250",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250t-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 15,
+    name: "FFX Tyre Coupling Flange 250H (5040)",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250h-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 16,
+    name: "FFX Tyre Coupling Flange 250F (5040)",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250f-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 17,
+    name: "FFX Tyre Coupling Flange 250B",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250b-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 18,
+    name: "FFX Coupling FRAS Tyre 220",
+    category: "Shaft Couplings",
+    subcategory: "FFX Tyre Couplings",
+    image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx220fras-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
+    price: "Price on Request"
+  },
+  // Add Sprockets products from homepage.html
+  {
+    id: 19,
+    name: 'British Standard Taper Bore Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_top.jpg',
+  },
+  {
+    id: 20,
+    name: 'British Standard Pilot Bore Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_left.jpg',
+  },
+  {
+    id: 21,
+    name: 'British Standard Pilot Bore Plate Wheels',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_top.jpg',
+  },
+  {
+    id: 22,
+    name: 'Taper Bore Double Simplex Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_left.jpg',
+  },
+  {
+    id: 23,
+    name: 'Pilot Bore Double Simplex Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_top.jpg',
+  },
+  {
+    id: 24,
+    name: 'Idler Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_left.jpg',
+  },
+  {
+    id: 25,
+    name: 'ANSI Pilot Bore Sprockets',
+    category: 'Sprockets',
+    image: 'https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/sprockets_top.jpg',
+  },
+  // Add Belts products from homepage.html
+  {
+    id: 26,
+    name: 'Classical V-Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-belt-classical-v-belts-1_1.jpg',
+  },
+  {
+    id: 27,
+    name: 'Classical CRE V-Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-belt-cre-v-belts-1_1.jpg',
+  },
+  {
+    id: 28,
+    name: 'Wedge Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-belt-wedge-belts-1_1.jpg',
+  },
+  {
+    id: 29,
+    name: 'CRE Wedge Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-belt-cre-wedge-belts-1_1.jpg',
+  },
+  {
+    id: 30,
+    name: 'Narrow V Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-belt-narrow-v-belts-1_1.jpg',
+  },
+  {
+    id: 31,
+    name: 'Classical Timing Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-timing-belt-classical-timing-belts-1_1.jpg',
+  },
+  {
+    id: 32,
+    name: 'Curved Tooth Timing Belts',
+    category: 'Belts',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-timing-belt-curved-tooth-timing-belts-1_1.jpg',
+  },
+  // Continue for all categories and subcategories as in homepage.html
+  // Shaft Fixings products from homepage.html product grid
+  {
+    id: 33,
+    name: 'Taper Bushes - Metric',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-taper-bush-metric-shaft_fixings-taper_bushes-1_1.jpg',
+  },
+  {
+    id: 34,
+    name: 'Taper Bushes - Imperial',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-taper-bush-imperial-shaft_fixings-taper_bushes-1_1.jpg',
+  },
+  {
+    id: 35,
+    name: 'Taper Bush Adaptors',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-taper-bush-adaptor-shaft_fixings-taper_bushes-1_1.jpg',
+  },
+  {
+    id: 36,
+    name: 'Bolt-on-Hubs',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-bolt-on-hub-shaft_fixings-bolt_on_hubs-1_1.jpg',
+  },
+  {
+    id: 37,
+    name: 'Weld-on-Hubs',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-weld-on-hub-shaft_fixings-weld_on_hubs-1_1.jpg',
+  },
+  {
+    id: 38,
+    name: 'Shaftlock Sizes 01 - 22',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-shaftlock-shaft_fixings-shaftlock-1_1.jpg',
+  },
+  {
+    id: 39,
+    name: 'Torque Limiters',
+    category: 'Shaft Fixings',
+    image: 'https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-torque-limiter-shaft_fixings-torque_limiters-1_1.jpg',
+  },
+  // Electric Motors
+  {
+    id: 40,
+    name: "Motor Mounts",
+    category: "Electric Motors",
+    subcategory: "Motor Mounts",
+    image: "/images/slide_26_img_6.png",
+    price: "Price on Request"
+  },
+  {
+    id: 41,
+    name: "Three Phase Electric Motor",
+    category: "Electric Motors",
+    subcategory: "Three Phase",
+    image: "/images/slide_26_img_3.png",
+    price: "Price on Request"
+  },
+  // Gearboxes
+  {
+    id: 42,
+    name: "Worm Gear Unit",
+    category: "Gearboxes",
+    subcategory: "Worm Gear Units",
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/gear_boxes_top.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 43,
+    name: "SMSR Gearbox",
+    category: "Gearboxes",
+    subcategory: "SMSRs",
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/new_gear_boxes_left.jpg",
+    price: "Price on Request"
+  },
+  // Bearings
+  {
+    id: 44,
+    name: "Bearing Units",
+    category: "Bearings",
+    subcategory: "Bearing Units",
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/bearings_top.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 45,
+    name: "Plummer Blocks",
+    category: "Bearings",
+    subcategory: "Plummer Blocks",
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/bearings_left.jpg",
+    price: "Price on Request"
+  },
+  {
+    id: 46,
+    name: "Standard Bearings",
+    category: "Bearings",
+    subcategory: "Standard Bearings",
+    image: "https://challengeptmedia.b-cdn.net/wysiwyg/custom_website_images/menu_drop_down/bearings_left.jpg",
+    price: "Price on Request"
+  },
 ];
 
-export const companyLogo = "/images/slide_23_img_15.png";
-export default products; 
+export default products;
+
+export const companyLogo = "/images/slide_23_img_15.png"; 
