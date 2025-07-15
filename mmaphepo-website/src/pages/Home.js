@@ -90,18 +90,33 @@ const Home = () => (
       <Grid container spacing={4} justifyContent="center">
         {featured.map(product => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Card className="card-shadow" sx={{ height: '100%', display: 'flex', flexDirection: 'column', boxShadow: 3 }}>
-              <CardMedia
-                component="img"
-                height="120"
-                image={product.image}
-                alt={product.name}
-                sx={{ objectFit: 'contain', bgcolor: '#f5f5f5' }}
-              />
-              <CardContent>
-                <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>{product.name}</Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 1, fontSize: '0.95rem' }}>{product.description}</Typography>
-                <Button variant="outlined" color="primary" href={`/product/${product.id}`}>View Details</Button>
+            <Card className="card-shadow" sx={{ height: '100%', minWidth: 240, maxWidth: 300, display: 'flex', flexDirection: 'column', boxShadow: 3, alignItems: 'center', pt: 2, pb: 1, mx: 'auto' }}>
+              <Box
+                sx={{
+                  width: 100,
+                  height: 100,
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 16px 0 rgba(33,150,243,0.10)',
+                  border: '4px solid #e3f0fb',
+                  mb: 1.5,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #e3f0fb 0%, #bbdefb 100%)',
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={product.image}
+                  alt={product.name}
+                  sx={{ width: 70, height: 70, objectFit: 'contain', background: 'transparent' }}
+                />
+              </Box>
+              <CardContent sx={{ width: '100%', textAlign: 'center', px: 1 }}>
+                <Typography variant="subtitle1" fontWeight={700} sx={{ fontSize: '1.08rem', mb: 0.5 }}>{product.name}</Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1, fontSize: '0.97rem' }}>{product.description}</Typography>
+                <Button variant="outlined" color="primary" href={`/product/${product.id}`} sx={{ fontSize: '0.97rem', px: 2, py: 0.7, borderRadius: 2 }}>View Details</Button>
               </CardContent>
             </Card>
           </Grid>

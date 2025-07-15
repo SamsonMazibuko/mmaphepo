@@ -10,24 +10,24 @@ import { Link } from "react-router-dom";
 import { companyLogo } from "../data/products";
 
 const Footer = () => (
-  <Box component="footer" sx={{ bgcolor: '#222', color: '#fff', mt: 8, pt: 6, pb: 3 }}>
+  <Box component="footer" sx={{ bgcolor: '#2E8B57', color: '#fff', mt: 8, pt: 6, pb: 3 }}>
     <Container maxWidth="lg">
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={6} justifyContent="space-between" alignItems="flex-start">
         {/* Logo & Company Info */}
         <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: { xs: 2, md: 0 } }}>
           <Avatar src={companyLogo} alt="Logo" sx={{ width: 56, height: 56, bgcolor: '#fff' }} />
           <Box>
-            <Typography variant="h6" fontWeight={700} color="primary.main">Mmaphepo Holdings</Typography>
-            <Typography variant="body2" color="grey.300">Mining, Industrial & Engineering Solutions</Typography>
+            <Typography variant="h6" fontWeight={700} sx={{ color: '#FFD700' }}>Mmaphepo Holdings</Typography>
+            <Typography variant="body2" sx={{ color: '#fff' }}>Mining, Industrial & Engineering Solutions</Typography>
           </Box>
         </Stack>
         {/* Quick Links */}
         <Box>
           <Typography variant="subtitle1" fontWeight={600} gutterBottom>Quick Links</Typography>
           <Stack spacing={1}>
-            <MuiLink component={Link} to="/" color="inherit" underline="hover">Home</MuiLink>
-            <MuiLink component={Link} to="/shop" color="inherit" underline="hover">Shop</MuiLink>
-            <MuiLink component={Link} to="/about" color="inherit" underline="hover">About</MuiLink>
+            <MuiLink component={Link} to="/" sx={{ color: '#fff' }} underline="hover">Home</MuiLink>
+            <MuiLink component={Link} to="/shop" sx={{ color: '#fff' }} underline="hover">Shop</MuiLink>
+            <MuiLink component={Link} to="/about" sx={{ color: '#fff' }} underline="hover">About</MuiLink>
           </Stack>
         </Box>
         {/* Contact Info */}
@@ -35,16 +35,16 @@ const Footer = () => (
           <Typography variant="subtitle1" fontWeight={600} gutterBottom>Contact Us</Typography>
           <Stack spacing={1}>
             <Stack direction="row" spacing={1} alignItems="center">
-              <LocationOnIcon fontSize="small" />
-              <Typography variant="body2">2 Darter Road, Ze Bali Security Lodge, Greenhills, Randfontein, 1759</Typography>
+              <LocationOnIcon fontSize="small" sx={{ color: '#FFD700' }} />
+              <Typography variant="body2" sx={{ color: '#fff' }}>2 Darter Road, Ze Bali Security Lodge, Greenhills, Randfontein, 1759</Typography>
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center">
-              <PhoneIcon fontSize="small" />
-              <Typography variant="body2">073 566 2161</Typography>
+              <PhoneIcon fontSize="small" sx={{ color: '#FFD700' }} />
+              <Typography variant="body2" sx={{ color: '#fff' }}>073 566 2161</Typography>
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center">
-              <EmailIcon fontSize="small" />
-              <Typography variant="body2">info@mmaphepo.co.za</Typography>
+              <EmailIcon fontSize="small" sx={{ color: '#FFD700' }} />
+              <Typography variant="body2" sx={{ color: '#fff' }}>info@mmaphepo.co.za</Typography>
             </Stack>
           </Stack>
         </Box>
@@ -52,12 +52,12 @@ const Footer = () => (
         <Box>
           <Typography variant="subtitle1" fontWeight={600} gutterBottom>Follow Us</Typography>
           <Stack direction="row" spacing={1}>
-            <IconButton color="primary" href="#" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: 'primary.light' } }}><LinkedInIcon /></IconButton>
+            <IconButton color="primary" href="#" sx={{ bgcolor: '#FFD700', color: '#2E8B57', '&:hover': { bgcolor: '#ffe066' } }}><LinkedInIcon /></IconButton>
           </Stack>
         </Box>
       </Stack>
-      <Divider sx={{ my: 3, borderColor: 'grey.800' }} />
-      <Typography variant="body2" align="center" color="grey.400">
+      <Divider sx={{ my: 3, borderColor: '#FFD700' }} />
+      <Typography variant="body2" align="center" sx={{ color: '#FFD700' }}>
         &copy; {new Date().getFullYear()} Mmaphepo Holdings. All rights reserved.
       </Typography>
     </Container>

@@ -185,7 +185,7 @@ const Shop = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ bgcolor: '#f5f8fd', minHeight: '100vh' }}>
       {/* Horizontal category bar */}
       <Box
         sx={{
@@ -294,29 +294,65 @@ const Shop = () => {
         <Grid container spacing={3}>
           {filtered.map((product, idx) => (
             <Grid item xs={12} sm={6} md={4} key={product.name + idx}>
-              <Card sx={{ maxWidth: 280, mx: 'auto', boxShadow: 2 }}>
+              <Card 
+                sx={{ 
+                  maxWidth: 320, 
+                  mx: 'auto', 
+                  boxShadow: '0 4px 24px 0 rgba(33, 150, 243, 0.10), 0 1.5px 4px rgba(33, 150, 243, 0.04)',
+                  borderRadius: 4,
+                  background: 'linear-gradient(135deg, #e3f0fb 0%, #bbdefb 100%)',
+                  transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s',
+                  '&:hover': {
+                    transform: 'scale(1.035)',
+                    boxShadow: '0 8px 32px 0 rgba(33, 150, 243, 0.18), 0 3px 8px rgba(33, 150, 243, 0.08)',
+                  },
+                  p: 1.5,
+                }}
+              >
                 <CardMedia
                   component="img"
                   height="160"
                   image={product.image}
                   alt={product.name}
-                  sx={{ objectFit: 'contain', bgcolor: '#f5f5f5' }}
+                  sx={{ objectFit: 'contain', bgcolor: '#f5f5f5', borderRadius: 3, boxShadow: 1 }}
                 />
                 <CardContent sx={{ py: 1, px: 1.5 }}>
-                  <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1rem' }}>{product.name}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.85rem' }}>{product.category}{product.subcategory ? ` / ${product.subcategory}` : ''}</Typography>
-                  <Typography variant="body2" sx={{ fontSize: '0.95rem' }}>{product.price}</Typography>
+                  <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1.08rem', mb: 0.5 }}>{product.name}</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.92rem', mb: 0.5 }}>{product.category}{product.subcategory ? ` / ${product.subcategory}` : ''}</Typography>
+                  <Typography variant="body2" sx={{ fontSize: '1.05rem', color: 'var(--accent)', fontWeight: 500 }}>{product.price}</Typography>
                 </CardContent>
-                <CardActions sx={{ py: 0.5, px: 1.5 }}>
-                  <Button size="small" sx={{ fontSize: '0.85rem', py: 0.5, px: 1.5 }} onClick={() => addToCart(product)}>Add to Cart</Button>
+                <CardActions sx={{ py: 0.5, px: 1.5, gap: 1 }}>
+                  <Button 
+                    size="small" 
+                    sx={{ 
+                      fontSize: '0.92rem', 
+                      py: 0.5, 
+                      px: 2, 
+                      borderRadius: 3, 
+                      background: 'linear-gradient(90deg, #2E8B57 0%, #e0f7fa 100%)',
+                      color: '#fff',
+                      fontWeight: 600,
+                      boxShadow: '0 2px 8px rgba(46, 139, 87, 0.10)',
+                      '&:hover': { background: 'linear-gradient(90deg, #218c5a 0%, #b2ebf2 100%)' }
+                    }} 
+                    onClick={() => addToCart(product)}
+                  >Add to Cart</Button>
                   <Button
                     size="small"
-                    sx={{ fontSize: '0.85rem', py: 0.5, px: 1.5 }}
+                    sx={{ 
+                      fontSize: '0.92rem', 
+                      py: 0.5, 
+                      px: 2, 
+                      borderRadius: 3, 
+                      background: 'linear-gradient(90deg, #FFD700 0%, #f3e8ff 100%)',
+                      color: '#333',
+                      fontWeight: 600,
+                      boxShadow: '0 2px 8px rgba(255, 215, 0, 0.10)',
+                      '&:hover': { background: 'linear-gradient(90deg, #FFC300 0%, #ede7f6 100%)' }
+                    }}
                     component={Link}
                     to={`/product/${product.id || idx}`}
-                  >
-                    View
-                  </Button>
+                  >View</Button>
                 </CardActions>
               </Card>
             </Grid>
