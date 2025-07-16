@@ -7,7 +7,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3xrl-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "High quality transmission roller chain, British Standard, pre-stretched for long life. Available with a range of attachments and compatible sprockets."
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3l-chain-roller_chain-british_standard_roller_chain-1_3.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Offset link for X Series BS Roller Chain, designed for easy installation and reliable performance in demanding applications."
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3xs-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Cotter pin connecting link for X Series BS Roller Chain, ensuring secure and easy chain assembly."
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-64b-3x-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Durable and long-life transmission roller chain, British Standard, suitable for a wide range of industrial applications."
   },
   {
     id: 5,
@@ -39,7 +43,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-56b-3xrl-chain-roller_chain-british_standard_roller_chain-1_4.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "High quality 56B-3 rivet link roller chain, pre-stretched for long life and reliable power transmission."
   },
   {
     id: 6,
@@ -47,7 +52,8 @@ const products = [
     category: "Chain",
     subcategory: "Roller Chain",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-v-rbc-56b-3l-chain-roller_chain-british_standard_roller_chain-1_3.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Offset link for 56B-3 roller chain, designed for easy installation and robust performance."
   },
   // Pulleys
   {
@@ -56,7 +62,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x12-pulleys-v-pulleys-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Stocked Vee and timing pulleys available for a wide range of belts. Supplied with taper bores or pilot bores for easy installation."
   },
   {
     id: 8,
@@ -64,7 +71,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x10-pulleys-v-pulleys-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "High quality Vee pulley designed for use with a wide range of classical and wedge belts. No machining required."
   },
   {
     id: 9,
@@ -72,7 +80,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x8-pulleys-v-pulleys-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Durable and reliable Vee pulley, compatible with major brands and suitable for a variety of belt types."
   },
   {
     id: 10,
@@ -80,7 +89,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x6-pulleys-v-pulleys-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Precision-engineered Vee pulley for efficient power transmission and long service life."
   },
   {
     id: 11,
@@ -88,7 +98,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x5-pulleys-v-pulleys-1_2.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Versatile Vee pulley, easy to install and compatible with a range of taper bushes and belts."
   },
   {
     id: 12,
@@ -96,7 +107,8 @@ const products = [
     category: "Pulleys",
     subcategory: "V-Pulleys",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-tbp-spc1250x4-pulleys-v-pulleys-1_2.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Robust Vee pulley for classical and wedge belts, designed for rapid fit and minimal downtime."
   },
   // Shaft Couplings
   {
@@ -105,7 +117,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250fras-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Flexible shaft coupling designed to accommodate high torque, shock loading, and shaft misalignment. Long-lasting and easy to fit."
   },
   {
     id: 14,
@@ -113,7 +126,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250t-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Natural tyre shaft coupling for high torque and misalignment, providing reliable performance and easy installation."
   },
   {
     id: 15,
@@ -121,7 +135,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250h-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Heavy-duty flange for FFX Tyre Couplings, designed for secure fit and high performance in demanding applications."
   },
   {
     id: 16,
@@ -129,7 +144,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250f-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Flange for FFX Tyre Couplings, offering robust connection and easy assembly for industrial shaft systems."
   },
   {
     id: 17,
@@ -137,7 +153,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx250b-shaft_couplings-ffx_tyre_couplings-1_1.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Reliable flange for FFX Tyre Couplings, suitable for a wide range of industrial and engineering applications."
   },
   {
     id: 18,
@@ -145,7 +162,8 @@ const products = [
     category: "Shaft Couplings",
     subcategory: "FFX Tyre Couplings",
     image: "https://challengeptmedia.b-cdn.net/catalog/product/cache/7e4c0598f62cd972eb8388ae445facd1/0/1/01-ffx220fras-shaft_couplings-ffx_tyre_couplings-1_2.jpg",
-    price: "Price on Request"
+    price: "Price on Request",
+    description: "Flexible shaft coupling for high torque and misalignment, designed for durability and ease of maintenance."
   },
   // Add Sprockets products from homepage.html
   {

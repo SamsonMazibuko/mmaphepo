@@ -185,7 +185,7 @@ const Shop = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#f5f8fd', minHeight: '100vh' }}>
+    <Box sx={{ bgcolor: '#fff', minHeight: '100vh' }}>
       {/* Horizontal category bar */}
       <Box
         sx={{
@@ -300,7 +300,7 @@ const Shop = () => {
                   mx: 'auto', 
                   boxShadow: '0 4px 24px 0 rgba(33, 150, 243, 0.10), 0 1.5px 4px rgba(33, 150, 243, 0.04)',
                   borderRadius: 4,
-                  background: 'linear-gradient(135deg, #e3f0fb 0%, #bbdefb 100%)',
+                  background: '#fff',
                   transition: 'transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s',
                   '&:hover': {
                     transform: 'scale(1.035)',
@@ -311,10 +311,10 @@ const Shop = () => {
               >
                 <CardMedia
                   component="img"
-                  height="160"
+                  height="220"
                   image={product.image}
                   alt={product.name}
-                  sx={{ objectFit: 'contain', bgcolor: '#f5f5f5', borderRadius: 3, boxShadow: 1 }}
+                  sx={{ objectFit: 'cover', bgcolor: '#fff', borderRadius: 3, boxShadow: 1, width: '100%' }}
                 />
                 <CardContent sx={{ py: 1, px: 1.5 }}>
                   <Typography variant="subtitle1" fontWeight={600} sx={{ fontSize: '1.08rem', mb: 0.5 }}>{product.name}</Typography>
@@ -329,11 +329,11 @@ const Shop = () => {
                       py: 0.5, 
                       px: 2, 
                       borderRadius: 3, 
-                      background: 'linear-gradient(90deg, #2E8B57 0%, #e0f7fa 100%)',
+                      background: '#1976d2',
                       color: '#fff',
                       fontWeight: 600,
-                      boxShadow: '0 2px 8px rgba(46, 139, 87, 0.10)',
-                      '&:hover': { background: 'linear-gradient(90deg, #218c5a 0%, #b2ebf2 100%)' }
+                      boxShadow: '0 2px 8px rgba(25, 118, 210, 0.10)',
+                      '&:hover': { background: '#1565c0' }
                     }} 
                     onClick={() => addToCart(product)}
                   >Add to Cart</Button>
@@ -344,11 +344,11 @@ const Shop = () => {
                       py: 0.5, 
                       px: 2, 
                       borderRadius: 3, 
-                      background: 'linear-gradient(90deg, #FFD700 0%, #f3e8ff 100%)',
-                      color: '#333',
+                      background: '#1976d2',
+                      color: '#fff',
                       fontWeight: 600,
-                      boxShadow: '0 2px 8px rgba(255, 215, 0, 0.10)',
-                      '&:hover': { background: 'linear-gradient(90deg, #FFC300 0%, #ede7f6 100%)' }
+                      boxShadow: '0 2px 8px rgba(25, 118, 210, 0.10)',
+                      '&:hover': { background: '#1565c0' }
                     }}
                     component={Link}
                     to={`/product/${product.id || idx}`}
