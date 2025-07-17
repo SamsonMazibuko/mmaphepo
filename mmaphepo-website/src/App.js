@@ -24,6 +24,9 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Popover from '@mui/material/Popover';
 import ChatIcon from '@mui/icons-material/Chat';
 import CloseIcon from '@mui/icons-material/Close';
+import axios from 'axios';
+import VerifyEmail from './pages/VerifyEmail';
+import ResetPassword from './pages/ResetPassword';
 
 export const CartContext = createContext();
 export const OrderContext = createContext();
@@ -223,13 +226,50 @@ function App() {
     else localStorage.removeItem('user');
   }, [user]);
 
-  const login = (email, password) => {
-    // For demo: accept any email/password, set user
-    setUser({ email, name: email.split('@')[0] });
+  const login = async (email, password) => {
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      setUser({ email, token: res.data.token });
+      return { success: true };
+    } catch (err) {
+      return { success: false, message: err.response?.data?.message || 'Login failed' };
+    }
   };
   const logout = () => setUser(null);
-  const register = (email, password, name) => {
-    setUser({ email, name });
+  const register = async (email, password) => {
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/register', { email, password });
+      return { success: true, message: res.data.message };
+    } catch (err) {
+      return { success: false, message: err.response?.data?.message || 'Registration failed' };
+    }
+  };
+
+  const forgotPassword = async (email) => {
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      return { success: true, message: res.data.message };
+    } catch (err) {
+      return { success: false, message: err.response?.data?.message || 'Request failed' };
+    }
+  };
+
+  const resetPassword = async (token, password) => {
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/reset-password', { token, password });
+      return { success: true, message: res.data.message };
+    } catch (err) {
+      return { success: false, message: err.response?.data?.message || 'Reset failed' };
+    }
+  };
+
+  const verifyEmail = async (token) => {
+    try {
+      const res = await axios.get(`http://localhost:5000/api/auth/verify?token=${token}`);
+      return { success: true, message: res.data.message };
+    } catch (err) {
+      return { success: false, message: err.response?.data?.message || 'Verification failed' };
+    }
   };
 
   const addToCart = (product, qty = 1) => {
@@ -276,7 +316,7 @@ function App() {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, register }}>
+    <AuthContext.Provider value={{ user, login, logout, register, forgotPassword, resetPassword, verifyEmail }}>
       <OrderContext.Provider value={{ orders, addOrder, updateOrderStatus }}>
         <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQty, clearCart }}>
           <Router>
@@ -335,6 +375,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/verify" element={<VerifyEmail />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
               </Routes>
             </Container>
             <Footer />
