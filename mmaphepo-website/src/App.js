@@ -226,9 +226,11 @@ function App() {
     else localStorage.removeItem('user');
   }, [user]);
 
+  const API_BASE_URL = 'https://backend-one-delta-38.vercel.app';
+
   const login = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const res = await axios.post(`${API_BASE_URL}/api/auth/login`, { email, password });
       setUser({ email, token: res.data.token });
       return { success: true };
     } catch (err) {
@@ -238,7 +240,7 @@ function App() {
   const logout = () => setUser(null);
   const register = async (email, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', { email, password });
+      const res = await axios.post(`${API_BASE_URL}/api/auth/register`, { email, password });
       return { success: true, message: res.data.message };
     } catch (err) {
       return { success: false, message: err.response?.data?.message || 'Registration failed' };
@@ -247,7 +249,7 @@ function App() {
 
   const forgotPassword = async (email) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      const res = await axios.post(`${API_BASE_URL}/api/auth/forgot-password`, { email });
       return { success: true, message: res.data.message };
     } catch (err) {
       return { success: false, message: err.response?.data?.message || 'Request failed' };
@@ -256,7 +258,7 @@ function App() {
 
   const resetPassword = async (token, password) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/reset-password', { token, password });
+      const res = await axios.post(`${API_BASE_URL}/api/auth/reset-password`, { token, password });
       return { success: true, message: res.data.message };
     } catch (err) {
       return { success: false, message: err.response?.data?.message || 'Reset failed' };
@@ -265,7 +267,7 @@ function App() {
 
   const verifyEmail = async (token) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/auth/verify?token=${token}`);
+      const res = await axios.get(`${API_BASE_URL}/api/auth/verify?token=${token}`);
       return { success: true, message: res.data.message };
     } catch (err) {
       return { success: false, message: err.response?.data?.message || 'Verification failed' };
