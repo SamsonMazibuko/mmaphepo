@@ -25,6 +25,8 @@ app.use(cors({
   credentials: true
 }));
 
+app.options('*', cors()); // Handle preflight requests
+
 // No MySQL connection pool needed
 // const db = mysql.createPool({ ... });
 
